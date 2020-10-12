@@ -1,0 +1,60 @@
+.input-group {
+    width:fit-content !important;
+    margin-bottom: 20px;
+}
+
+.input-group-addon {
+  font-size: 10px!important;
+}
+
+
+
+
+
+.toggle-switch {
+  height: 26px;
+  width: 58px;
+  display: inline-block;
+  position: relative;
+}
+.toggle-switch input {
+  display: none;
+}
+.toggle-switch input:checked + .slider {
+  background-color:#74c365;
+}
+.toggle-switch input:checked + .slider::after {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.toggle-switch .slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey;
+  transition: 2s;
+}
+.toggle-switch .slider::after {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  left: 4px;
+  bottom: 4px;
+  transition: 1s;
+}
+
+
+.card-header
+{
+  margin-top: 20px;
+}
+
+.container
+{
+  margin-top: 20px;
+}

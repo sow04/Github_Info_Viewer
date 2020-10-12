@@ -1,0 +1,69 @@
+<!-- <div *ngIf="githubRepos" class="card">
+    <div class="card-header bg-light text-white">
+        <h4>Github Repositories</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li *ngFor="let repo of githubRepos" class="list-group-item d-flex justify-content-between">
+                
+                    <a [href]="repo.html_url" class="text-primary font-weight-bold" target="_blank">{{repo.name}}</a>
+                    <span class="text-primary">{{repo.size}}</span>
+            </li>
+        </ul>
+    </div>
+</div> -->
+<div *ngIf="githubRepos">
+<div class="card-header bg-secondary text white ">
+    <h4>Github Repositories</h4>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-6">
+        
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+          <select class="form-control" [(ngModel)]="language">
+             <option [ngValue]="undefined">Language Select</option>
+            <option *ngFor="let c of filterLang">{{c}}</option>
+          </select> 
+        </div>
+      </div>
+      <div class="col-6">
+        <label class="btn btn-secondary " *ngFor="let m of modes">
+            <input type="radio"name="options" value="{{m}}" autocomplete="off" (change)="radioChangeHandler($event)" > {{m}}
+          </label>
+          <!-- <div>
+            Selected: {{selectedVal}}
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+    
+
+ 
+
+  
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th *ngFor="let c of colName" scope="col">{{c.h}}</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tableArray | filter:language">
+       
+        <td>{{t.repo_name}}</td>
+        <td><a [href]="t.repo_link">{{t.repo_link}}</a></td>
+        <td>{{t.pr}}</td>
+        <td  [ngStyle] ="{'background-color': !t.repo_language ?'#eee':'white'}">{{t.repo_language}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</div>
